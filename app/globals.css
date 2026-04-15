@@ -887,3 +887,49 @@ main {
     font-size: 0.85rem;
   }
 }
+
+.mobile-menu-button {
+  display: none;
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .topnav {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu {
+    display: grid;
+    gap: 10px;
+    padding: 0 16px 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(6, 6, 6, 0.96);
+  }
+
+  .mobile-menu a {
+    padding: 10px 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+}

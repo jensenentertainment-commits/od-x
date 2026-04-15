@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import  Navbar  from "./components/NavBar";
 
 const flavors = [
   {
@@ -280,21 +281,7 @@ export default function HomePage() {
         }
       `}</style>
 
-      <header className="topbar">
-        <div className="container topbar-inner">
-          <div className="brand">
-            <div className="brand-mark">OD-X</div>
-            <div className="brand-sub">Chemical Overdrive</div>
-          </div>
-
-          <nav className="topnav">
-            <a href="#flavors">Fuel Line</a>
-            <a href="#games">Invitational</a>
-            <a href="#news">News</a>
-            <a href="#apply">Intake</a>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       <section className="hero">
         <div className="grid-bg" />
