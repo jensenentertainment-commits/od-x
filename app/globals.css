@@ -900,6 +900,7 @@ main {
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .mobile-menu {
@@ -907,6 +908,28 @@ main {
 }
 
 @media (max-width: 800px) {
+  .topbar-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+  }
+
+  .brand {
+    gap: 8px;
+    align-items: center;
+  }
+
+  .brand-mark {
+    font-size: 0.95rem;
+    letter-spacing: 0.16em;
+  }
+
+  .brand-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
   .topnav {
     display: none;
   }
@@ -926,10 +949,136 @@ main {
   }
 
   .mobile-menu a {
+    display: block;
     padding: 10px 0;
     font-size: 0.78rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted);
+  }
+
+  .section-head,
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero {
+    padding: 16px 0 12px;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .kicker {
+    font-size: 0.6rem;
+    padding: 6px 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 16vw, 4.6rem);
+    line-height: 0.9;
+    margin-top: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .hero-copy {
+    margin-top: 12px;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .hero-side {
+    min-height: 220px;
+    max-height: 220px;
+    border-radius: 22px;
+  }
+
+  .can {
+    width: 124px;
+    height: 260px;
+  }
+
+  .can-logo {
+    font-size: 2.2rem;
+    top: 62px;
+  }
+
+  .can-copy {
+    bottom: 52px;
+    font-size: 0.58rem;
+    width: 78%;
+  }
+
+  .can-stripe {
+    inset: 42px auto 28px 50%;
+    width: 14px;
+  }
+
+  .side-stats {
+    display: none;
+  }
+
+  .flavor-grid,
+  .games-grid,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .marquee-item {
+    font-size: 0.7rem;
+    padding: 10px 14px;
+  }
+
+  .section,
+  .cta {
+    padding: 54px 0;
+  }
+
+  .card,
+  .cta-box {
+    border-radius: 24px;
+  }
+
+  .news-card {
+    min-height: auto;
+  }
+
+  .cta-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .cta-list {
+    gap: 8px;
+  }
+
+  .cta-list-item {
+    font-size: 0.85rem;
   }
 }

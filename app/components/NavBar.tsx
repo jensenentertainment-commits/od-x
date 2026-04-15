@@ -13,7 +13,6 @@ export default function Navbar() {
           <div className="brand-sub">Chemical Overdrive</div>
         </div>
 
-        {/* Desktop nav */}
         <nav className="topnav">
           <a href="#flavors">Fuel Line</a>
           <a href="#games">Invitational</a>
@@ -21,8 +20,8 @@ export default function Navbar() {
           <a href="#apply">Intake</a>
         </nav>
 
-        {/* Mobile button */}
         <button
+          type="button"
           className="mobile-menu-button"
           onClick={() => setOpen((v) => !v)}
           aria-label="Meny"
@@ -32,7 +31,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="mobile-menu">
           <a href="#flavors" onClick={() => setOpen(false)}>
