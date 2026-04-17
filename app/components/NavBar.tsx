@@ -9,7 +9,7 @@ export default function Navbar() {
     <header className="topbar">
       <div className="container topbar-inner">
         <div className="brand">
-          <div className="brand-mark">OD-X</div>
+          <div className="brand-mark">STING.X</div>
           <div className="brand-sub">Chemical Overdrive</div>
         </div>
 
