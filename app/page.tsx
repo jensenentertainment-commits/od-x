@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Navbar from "../app/components/NavBar";
+import Navbar from "./components/NavBar";
 
 const flavors = [
   {
@@ -76,12 +76,12 @@ const news = [
 ];
 
 const ticker = [
-  "STING.X — Offisielt drivstoff for dårlige valg",
-  "STING.X — Dømmekraft selges separat",
   "STING.X — Ytelse først. Konsekvenser senere.",
   "STING.X — Klinisk unødvendig siden 2026",
   "STING.X — Resultater kan forekomme",
   "STING.X — Chemical Overdrive™",
+  "STING.X — Dømmekraft selges separat",
+  "STING.X — Offisielt drivstoff for dårlige valg",
 ];
 
 const reactions = [
@@ -89,30 +89,27 @@ const reactions = [
     kicker: "Chemical Overdrive aktivert",
     title: "Ettertanke deaktivert.",
     text: "Handling er nå prioritert over vurdering.",
-    button: "Gjør det igjen",
   },
   {
     kicker: "Systemtilstand oppdatert",
     title: "Du gjorde det.",
     text: "Dette føltes riktig i et kort øyeblikk.",
-    button: "Ta en til",
   },
   {
     kicker: "Intern registrering",
     title: "Konsekvenser på vei.",
     text: "Tempoet øker. Begrunnelsen henger etter.",
-    button: "Fortsett likevel",
   },
   {
     kicker: "Performance mode",
     title: "Resultater kan forekomme.",
     text: "Etterspill behandles fortløpende og uten sympati.",
-    button: "Mer STING.X",
   },
 ];
 
 export default function HomePage() {
   const [reactionIndex, setReactionIndex] = useState(0);
+  const [isShaking, setIsShaking] = useState(false);
 
   const activeReaction = useMemo(
     () => reactions[reactionIndex],
@@ -121,6 +118,11 @@ export default function HomePage() {
 
   function handleHeroAction() {
     setReactionIndex((prev) => (prev + 1) % reactions.length);
+    setIsShaking(true);
+
+    window.setTimeout(() => {
+      setIsShaking(false);
+    }, 450);
   }
 
   return (
@@ -128,40 +130,37 @@ export default function HomePage() {
       <div className="noise" />
       <Navbar />
 
-     <section className="hero hero--split">
-  <div className="grid-bg" />
-  <div className="container hero-split">
-    <div className="hero-content">
-      <div className="kicker">{activeReaction.kicker}</div>
+      <section className={`hero hero--split ${isShaking ? "hero--shaking" : ""}`}>
+        <div className="grid-bg" />
 
-      <h1 className="hero-title">STING.X</h1>
+        <div className="container hero-split">
+          <div className="hero-content">
+            <div className="kicker">{activeReaction.kicker}</div>
 
-      <p className="hero-subtitle">Chemical Overdrive.</p>
+            <h1 className="hero-title">STING.X</h1>
 
-      <div className="hero-copy hero-copy--tight">
-        <p>{activeReaction.title}</p>
-        <p>{activeReaction.text}</p>
-      </div>
+            <p className="hero-subtitle">Chemical Overdrive.</p>
 
-      <div className="hero-actions">
-        <button className="btn-primary" onClick={handleHeroAction}>
-          Gå i overdrive
-        </button>
-        <a href="#news" className="btn-secondary">
-          Se konsekvenser
-        </a>
-      </div>
-    </div>
+            <div className="hero-copy hero-copy--tight">
+              <p>{activeReaction.title}</p>
+              <p>{activeReaction.text}</p>
+            </div>
 
-    <div className="hero-media">
-      <img
-        src="/hero.jpg"
-        alt="STING.X hero"
-        className="hero-image"
-      />
-    </div>
-  </div>
-</section>
+            <div className="hero-actions">
+              <button className="btn-primary" onClick={handleHeroAction}>
+                Gå i overdrive
+              </button>
+              <a href="#news" className="btn-secondary">
+                Se konsekvenser
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-media">
+            <img src="/hero.jpg" alt="STING.X hero" className="hero-image" />
+          </div>
+        </div>
+      </section>
 
       <section className="marquee" aria-label="brand highlights">
         <div className="marquee-track">
